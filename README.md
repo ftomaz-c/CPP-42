@@ -1,2 +1,2 @@
-# C-42
+# CPP-42
 C++ Modules
