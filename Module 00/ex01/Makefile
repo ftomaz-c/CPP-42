@@ -2,9 +2,11 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = megaphone
+NAME = phonebook
 
-SRCS = megaphone.cpp
+SRCS =	main.cpp \
+		phonebook.cpp \
+		contact.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 

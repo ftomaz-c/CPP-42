@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 17:39:01 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/05/05 18:30:38 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/17 17:10:28 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,17 @@
 std::string	to_uppercase(const std::string& input)
 {
 	std::string output = input;
-	size_t i = 0;
-	while (i < output.length())
-	{
+	for (std::string::size_type i = 0; i < output.length(); i++)
 		output[i] = std::toupper(static_cast<unsigned char>(output[i]));
-		i++;
-	}
-	return output;
+	return (output);
 }
 
 int	main(int argc, char **argv)
 {
-	int	i = 1;
-	
 	if (argc > 1)
 	{
-		while (i < argc)
-		{
-			std::string new_str = to_uppercase(argv[i]);
-			std::cout << new_str;
-			i++;
-		}
+		for (int i = 1; i < argc; i++)
+			std::cout << to_uppercase(argv[i]);
 	}
 	else
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";

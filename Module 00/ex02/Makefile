@@ -2,9 +2,10 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = megaphone
+NAME = Account
 
-SRCS = megaphone.cpp
+SRCS =	Account.cpp \
+		tests.cpp \
 
 OBJ = $(SRCS:.cpp=.o)
 
