@@ -6,11 +6,13 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 00:00:00 by                   #+#    #+#             */
-/*   Updated: 2024/06/21 16:42:30 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/21 16:54:13 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
+#include <iostream>
+#include <ctime>
 
 //diff <(awk '{$1=""; print $0}' 19920104_091532.log) <(awk '{$1=""; print $0}' file.txt)
 
