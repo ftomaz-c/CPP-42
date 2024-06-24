@@ -6,18 +6,18 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:58:38 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/21 21:10:41 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/24 13:59:11 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include "Contact.hpp"
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <limits>
+#include "Contact.hpp"
 
 const int	MAX_CONTACTS = 8;
 

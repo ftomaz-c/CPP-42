@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 00:00:00 by                   #+#    #+#             */
-/*   Updated: 2024/06/21 17:06:35 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/24 14:26:01 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <ctime>
 
-//diff <(awk '{$1=""; print $0}' 19920104_091532.log) <(awk '{$1=""; print $0}' file.txt)
+//diff <(cut -d' ' -f2- 19920104_091532.log) <(cut -d' ' -f2- file..txt)
 
 void	Account::makeDeposit( int deposit )
 {

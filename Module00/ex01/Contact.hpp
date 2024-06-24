@@ -6,24 +6,27 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 21:05:08 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/21 22:24:00 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/24 14:03:43 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include "PhoneBook.hpp"
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <limits>
 
 class Contact
 {
 private:
-	int index;
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string phone_number;
-	std::string note;
+	int _index;
+	std::string _first_name;
+	std::string _last_name;
+	std::string _nickname;
+	std::string _phone_number;
+	std::string _note;
 
 public:
 	Contact (void);

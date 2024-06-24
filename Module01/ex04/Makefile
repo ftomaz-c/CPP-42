@@ -1,11 +1,10 @@
 CC = g++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
 
-NAME = Account
+NAME = Sed
 
-SRCS =	Account.cpp \
-		tests.cpp \
+SRCS =	main.cpp \
 
 OBJ = $(SRCS:.cpp=.o)
 

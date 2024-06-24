@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:54:27 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/21 21:07:34 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/24 14:27:08 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ std::string trim(const std::string& str, const std::string& whitespace = " ")
 
 void	Contact::displayContact(void) const
 {
-	if (index != -1)
+	if (_index != -1)
 	{
 		std::cout << "Index:	" << getIndex() << std::endl;
 		std::cout << "First Name:	" << getFirstName() << std::endl;
@@ -63,71 +63,71 @@ void	Contact::contactInput(void)
 
 void	Contact::setIndex(int index)
 {
-	this->index = index;
+	this->_index = index;
 	return ;
 }
 void	Contact::setFirstName(const std::string &first_name)
 {
-	this->first_name = first_name;
+	this->_first_name = first_name;
 	return ;
 }
 
 void	Contact::setLastName(const std::string &last_name)
 {
-	this->last_name = last_name;
+	this->_last_name = last_name;
 	return ;
 }
 
 void	Contact::setNickname(const std::string &nickname)
 {
-	this->nickname = nickname;
+	this->_nickname = nickname;
 	return ;
 }
 
 void	Contact::setPhoneNumber(const std::string &phone_number)
 {
-	this->phone_number = phone_number;
+	this->_phone_number = phone_number;
 	return ;
 }
 
 void	Contact::setNote(const std::string &note)
 {
-	this->note = note;
+	this->_note = note;
 	return ;
 }
 
 int	Contact::getIndex() const
 {
-	return (this->index);
+	return (this->_index);
 }
 const std::string	&Contact::getFirstName() const
 {
-	return (this->first_name);
+	return (this->_first_name);
 }
 
 const std::string &Contact::getLastName() const
 {
-	return (this->last_name);
+	return (this->_last_name);
 }
 
 const std::string	&Contact::getNickname() const
 {
-	return (this->nickname);
+	return (this->_nickname);
 }
 
 const std::string	&Contact::getPhoneNumber() const
 {
-	return (this->phone_number);
+	return (this->_phone_number);
 }
 
 const std::string	&Contact::getNote() const
 {
-	return (this->note);
+	return (this->_note);
 }
 
 Contact::Contact (void)
 {
-	this->index = -1;
+	this->_index = -1;
 	return ;
 }
 

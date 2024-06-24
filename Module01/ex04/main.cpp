@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/05 17:39:01 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/17 17:10:28 by ftomazc          ###   ########.fr       */
+/*   Created: 2024/06/23 15:17:52 by ftomazc           #+#    #+#             */
+/*   Updated: 2024/06/23 15:50:07 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <cctype>
-
-std::string	to_uppercase(const std::string& input)
-{
-	std::string output = input;
-	for (std::string::size_type i = 0; i < output.length(); i++)
-		output[i] = std::toupper(static_cast<unsigned char>(output[i]));
-	return (output);
-}
+#include <fstream>
 
 int	main(int argc, char **argv)
 {
-	if (argc > 1)
+	if (argc != 4)
 	{
-		for (int i = 1; i < argc; i++)
-			std::cout << to_uppercase(argv[i]);
+		std::cout << "This program takes 3 parameters:" << std::endl;
+		std::cout << "./sed filename s1 s2" << std::endl;
+		return (1);
 	}
-	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	std::cout << std::endl;
-	return (0);
+	std::fstream	fs;
+	fs.open(argv[1]);
+	if (!fs)
+	{
+		std::cout << argv[1] << " couldn't open" << std::endl;
+		return (2);
+	}
+	std::string	buf;
+	int	count = 0;
+	while(std::getline(fs, buf, '\n'))
+	{
+		count++;
+		size_t	pos = buf.find(argv[2]);
+		if (pos != std::string::npos)
+		{
+			
+		}
+	}
 }
