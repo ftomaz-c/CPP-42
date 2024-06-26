@@ -2,9 +2,10 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
 
-NAME = sed
+NAME = harl
 
 SRCS =	main.cpp \
+		Harl.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
