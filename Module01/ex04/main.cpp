@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 15:17:52 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/26 11:22:15 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/28 15:19:54 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,17 @@ int	main(int argc, char **argv)
 		std::cerr << "error: " << argv[1] << " could not open" << std::endl;
 		return (2);
 	}
+	if (fs.peek() == EOF) {
+		std::cout << "error: file is empty" << std::endl;
+		return (3);
+	}
 
 	std::ofstream	new_file("new_file.txt", std::ios_base::app);
 	if (!new_file)
 	{
 		std::cerr << "error: could not create new_file.txt" << std::endl;
 		fs.close();
-		return (3);
+		return (4);
 	}
 
 	std::string	buf;
@@ -45,7 +49,7 @@ int	main(int argc, char **argv)
 		size_t	pos = buf.find(argv[2]);
 		if (pos != std::string::npos)
 		{
-			buf.erase(pos, std::string(argv[3]).length() - 1);
+			buf.erase(pos, std::string(argv[2]).length() - 1);
 			buf.insert(pos, std::string(argv[3]));
 		}
 		new_file << buf;
@@ -55,4 +59,5 @@ int	main(int argc, char **argv)
 	}
 	fs.close();
 	new_file.close();
+	return (0);
 }

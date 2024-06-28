@@ -6,7 +6,7 @@
 /*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/27 16:10:25 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/06/28 17:11:02 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,23 @@ public:
 	Fixed( const float nbr );
 	Fixed( Fixed const & src );
 	~Fixed( void );
+
+	bool	operator>( Fixed const & obj ) const;
+	bool	operator<( Fixed const & obj ) const;
+	bool	operator>=( Fixed const & rhs ) const;
+	bool	operator<=( Fixed const & rhs ) const;
+	bool	operator==( Fixed const & rhs ) const;
+	bool	operator!=( Fixed const & rhs ) const;
+
+	Fixed &	operator+( Fixed const & obj );
+	Fixed &	operator-( Fixed const & obj );
+	Fixed &	operator*( Fixed const & obj );
+	Fixed &	operator/( Fixed const & obj );
+
+	Fixed &	operator++( void );
+	Fixed &	operator++( int );
+	Fixed &	operator--( void );
+	Fixed &	operator--( int );
 
 	Fixed &	operator=( Fixed const & rhs );
 

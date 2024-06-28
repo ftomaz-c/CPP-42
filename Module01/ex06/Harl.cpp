@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:28:10 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/26 12:34:37 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/28 15:26:15 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,27 +50,26 @@ void	Harl::error()
 
 void	Harl::complain(std::string level)
 {
-	struct levelArrayStruct
-	{
-		std::string	level;
-		void		(Harl::*memberFunction)();
-	};
-	
-	levelArrayStruct levelArray[] = {
-		{"DEBUG", &Harl::debug},
-		{"INFO", &Harl::info},
-		{"WARNING", &Harl::warning},
-		{"ERROR", &Harl::error},
-	};
+	std::string levelArray[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	for (int i = 0; i < 4; i++)
-	{
-		if (levelArray[i].level == level)
-		{
-			while (i < 4)
-			{
-				(this->*levelArray[i++].memberFunction)();
-				std::cout << std::endl;
+	for (int i = 0; i < 4; i++) {
+		if (levelArray[i] == level) {
+			while (i < 4) {
+				switch (i) {
+					case (0):
+						this->debug();
+						break ;
+					case (1):
+						this->info();
+						break ;
+					case (2):
+						this->warning();
+						break ;
+					case (3):
+						this->error();
+						break ;
+				}
+				i++;
 			}
 			return ;
 		}

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:54:27 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/24 14:27:08 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/24 18:06:05 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-std::string trim(const std::string& str, const std::string& whitespace = " ")
+static std::string trim(const std::string& str, const std::string& whitespace = " ")
 {
 	const std::size_t strBegin = str.find_first_not_of(whitespace);
 	if (strBegin == std::string::npos)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:28:10 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/26 12:20:30 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/28 14:50:50 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,12 @@ void	Harl::complain(std::string level)
 
 Harl::Harl()
 {
-	std::cout << "Harl Constructor called" << std::endl;
+	std::cout << "-Harl Constructor called-" << std::endl;
 	return ;
 }
 
 Harl::~Harl()
 {
-	std::cout << "Harl Destructor called" << std::endl;
+	std::cout << "-Harl Destructor called-" << std::endl;
 	return ;
 }

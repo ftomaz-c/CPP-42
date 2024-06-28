@@ -3,20 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:45:46 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/21 17:39:14 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/24 17:53:52 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	PhoneBook	phonebook;
 	std::string	command;
 
+	(void)argv;
+	if (argc != 1) 
+	{
+		std::cout << "./phonebook doesn't accept any arguments" << std::endl;
+		return (1);
+	}
 	std::cout << "===================\n";
     std::cout << "   THE PHONEBOOK    \n";
     std::cout << "===================\n";
@@ -24,12 +30,12 @@ int	main(void)
 	{
 		std::cout << std::endl << "> ";
 		std::cin >> command;
-		if (command == "ADD")
+		if (command.compare("ADD") == 0)
 			phonebook.addContact();
-		else if (command == "SEARCH")
+		else if (command.compare("SEARCH") == 0)
 			phonebook.searchContact();
-		else if (command != "EXIT")
-			std::cout << "--Unknown command. Please try again--\n";
-	} while (command != "EXIT");
+		else if (command.compare("EXIT") != 0)
+			std::cout << "--Unknown command. Please try again--" << std::endl;
+	} while (command.compare("EXIT") != 0);
 	return (0);
 }

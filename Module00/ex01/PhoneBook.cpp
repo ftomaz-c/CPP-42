@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:43:24 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/21 17:38:15 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/24 18:06:13 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-std::string	truncateString(const std::string &str)
+static std::string	truncateString(const std::string &str)
 {
 	return (str.length() > 10 ? str.substr(0, 9) + "." : str);
 }

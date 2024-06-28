@@ -6,13 +6,69 @@
 /*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 21:58:21 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/28 16:28:35 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/06/28 17:22:48 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 #include <cmath>
+
+bool	Fixed::operator>( Fixed const & obj ) const {
+	return ( getRawBits() > obj.getRawBits() );
+}
+
+bool	Fixed::operator<( Fixed const & obj ) const {
+	return ( getRawBits() < obj.getRawBits() );
+}
+
+bool	Fixed::operator>=( Fixed const & obj ) const {
+	return ( getRawBits() >= obj.getRawBits() );
+}
+
+bool	Fixed::operator<=( Fixed const & obj ) const {
+	return ( getRawBits() <= obj.getRawBits() );
+}
+
+bool	Fixed::operator==( Fixed const & obj ) const {
+	return ( getRawBits() == obj.getRawBits() );
+}
+
+bool	Fixed::operator!=( Fixed const & obj ) const {
+	return ( getRawBits() != obj.getRawBits() );	
+}
+
+Fixed &	Fixed::operator+( Fixed const & obj ) {
+	this->setRawBits( this->getRawBits() + obj.getRawBits() );
+}
+
+Fixed &	Fixed::operator-( Fixed const & obj ) {
+	this->getRawBits() - obj.getRawBits();
+}
+
+Fixed &	Fixed::operator*( Fixed const & obj ) {
+	return (this->getRawBits() * obj.getRawBits());
+}
+
+Fixed &	Fixed::operator/( Fixed const & obj ) {
+	this->getRawBits() / obj.getRawBits();
+}
+
+Fixed &	Fixed::operator++( void ) {
+	set++;
+}
+
+Fixed &	Fixed::operator++( int ) {
+
+}
+
+Fixed &	Fixed::operator--( void ) {
+	
+}
+
+Fixed &	Fixed::operator--( int ) {
+	
+}
 
 Fixed::Fixed( const int nbr )
 {
