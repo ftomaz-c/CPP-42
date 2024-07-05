@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 11:10:35 by ftomazc          ###   ########.fr       */
+/*   Created: 2024/07/05 12:56:47 by ftomazc           #+#    #+#             */
+/*   Updated: 2024/07/05 13:11:34 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-class Fixed
-{
-	
+# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
+
+class MateriaSource : public IMateriaSource{
+
 private:
-	int					_fixedPointNumber;
-	static const int	_numberFractionalBits = 8;
+	AMateria	*_materias[4];
 
 public:
-	Fixed( void );
-	Fixed( Fixed const & src );
-	~Fixed( void );
+	MateriaSource(  );
+	MateriaSource( const MateriaSource & src );
+	~MateriaSource(  );
 
-	Fixed &	operator=( Fixed const & rhs );
+	MateriaSource &	operator=( const MateriaSource & rhs );
 
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	void	learnMateria( AMateria *m );
+	virtual AMateria* createMateria(std::string const & type);
+
 };
 
 #endif

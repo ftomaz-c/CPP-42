@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:26 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/01 15:38:12 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/07/02 09:47:35 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ ClapTrap::ClapTrap( std::string name )
 	return ;
 }
 
-ClapTrap::ClapTrap( const ClapTrap & src ) {
-	std::cout << "ClapTrap cloned: \"Aaaaaaand... OPEN!\"" << std::endl;
+ClapTrap::ClapTrap( ClapTrap & src ) {
+	std::cout << "ClapTrap Copy cloned: \"Aaaaaaand... OPEN!\"" << std::endl;
 	*this = src;
 	return ;
 }
 
 ClapTrap::ClapTrap(  ) 
 	: _name( "ClapTrap" ), _hitPoints( 10 ), _energyPoints( 10 ), _attackDamage( 0 ) {
-	std::cout << "ClapTrap initialized: \"I am a CL4P-TP steward bot, but my";
+	std::cout << "ClapTrap Default initialized: \"I am a CL4P-TP steward bot, but my";
 	std::cout << "friends call me Claptrap! Or they would, if any of them were";
 	std::cout << " still alive, or have existed in the first place!\"" << std::endl;
 	return ;

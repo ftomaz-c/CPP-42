@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 11:10:35 by ftomazc          ###   ########.fr       */
+/*   Created: 2024/07/04 18:42:09 by ftomazc           #+#    #+#             */
+/*   Updated: 2024/07/05 12:49:51 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-class Fixed
-{
-	
-private:
-	int					_fixedPointNumber;
-	static const int	_numberFractionalBits = 8;
+# include "AMateria.hpp"
+
+class Cure : public AMateria {
 
 public:
-	Fixed( void );
-	Fixed( Fixed const & src );
-	~Fixed( void );
+	Cure(  );
+	Cure( const Cure & src );
+	~Cure(  );
 
-	Fixed &	operator=( Fixed const & rhs );
+	Cure & operator=( const Cure & rhs );
 
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	AMateria *	clone(  ) const;
+	void		use( ICharacter& target );
+
 };
 
 #endif

@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 11:10:35 by ftomazc          ###   ########.fr       */
+/*   Created: 2024/07/02 10:36:52 by ftomazc           #+#    #+#             */
+/*   Updated: 2024/07/04 16:41:40 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-class Fixed
-{
-	
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class Dog : public AAnimal {
+
 private:
-	int					_fixedPointNumber;
-	static const int	_numberFractionalBits = 8;
+	Brain	*_brain;
 
 public:
-	Fixed( void );
-	Fixed( Fixed const & src );
-	~Fixed( void );
+	Dog(  );
+	Dog( const Dog & src );
+	virtual ~Dog(  );
+	Dog &	operator=( const Dog & rhs );
 
-	Fixed &	operator=( Fixed const & rhs );
-
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	virtual void	makeSound(  ) const;
+	Brain			*getBrain(  ) const;
 };
 
 #endif

@@ -1,11 +1,14 @@
 CC = g++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g #-fsanitize=address
 
-NAME = ScavTrap
+NAME = AMateria
 
-SRCS =	ClapTrap.cpp \
-		ScavTrap.cpp \
+SRCS =	AMateria.cpp \
+		Ice.cpp \
+		Cure.cpp \
+		Character.cpp \
+		MateriaSource.cpp \
 		main.cpp
 
 OBJ = $(SRCS:.cpp=.o)

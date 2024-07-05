@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:26 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/01 15:38:12 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/07/01 17:14:22 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ ClapTrap::ClapTrap( std::string name )
 	return ;
 }
 
-ClapTrap::ClapTrap( const ClapTrap & src ) {
+ClapTrap::ClapTrap( ClapTrap & src ) {
 	std::cout << "ClapTrap cloned: \"Aaaaaaand... OPEN!\"" << std::endl;
 	*this = src;
 	return ;

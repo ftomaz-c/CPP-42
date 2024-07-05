@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 11:10:35 by ftomazc          ###   ########.fr       */
+/*   Created: 2024/07/02 10:46:28 by ftomazc           #+#    #+#             */
+/*   Updated: 2024/07/04 16:30:54 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-class Fixed
-{
-	
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class Cat : public AAnimal {
+
 private:
-	int					_fixedPointNumber;
-	static const int	_numberFractionalBits = 8;
+	Brain	*_brain;
 
 public:
-	Fixed( void );
-	Fixed( Fixed const & src );
-	~Fixed( void );
+	Cat(  );
+	Cat( const Cat & src );
+	virtual ~Cat(  );
+	Cat & operator=( const Cat & rhs );
 
-	Fixed &	operator=( Fixed const & rhs );
-
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	virtual void	makeSound(  ) const ;
+	Brain			*getBrain(  ) const;
 };
 
 #endif

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 11:10:35 by ftomazc          ###   ########.fr       */
+/*   Created: 2024/06/30 18:04:00 by ftomazc           #+#    #+#             */
+/*   Updated: 2024/07/01 18:08:38 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-class Fixed
-{
+int	main ( void ) {
 	
-private:
-	int					_fixedPointNumber;
-	static const int	_numberFractionalBits = 8;
+	ClapTrap	claptrap1("CL4P-TP");
+	ScavTrap	scavtrap1("SC4V-TP");
+	
+	claptrap1.attack( "Bandit" );
+	claptrap1.takeDamage( 3 );
+	claptrap1.beRepaired( 5 );
 
-public:
-	Fixed( void );
-	Fixed( Fixed const & src );
-	~Fixed( void );
-
-	Fixed &	operator=( Fixed const & rhs );
-
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
-};
-
-#endif
+	scavtrap1.attack( "Thresher" );
+	scavtrap1.takeDamage( 8 );
+	scavtrap1.beRepaired( 10 );
+	scavtrap1.guardGate(  );
+	return (0);
+}

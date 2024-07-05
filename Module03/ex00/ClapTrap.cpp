@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:26 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/30 21:16:01 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/07/04 17:20:33 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ClapTrap::attack( const std::string & target ) {
 }
 
 ClapTrap::ClapTrap( std::string name ) 
-	: _name( name ), _hitPoints( 100 ), _energyPoints( 50 ), _attackDamage( 20 ) {
+	: _name( name ), _hitPoints( 10 ), _energyPoints( 10 ), _attackDamage( 0 ) {
 	std::cout << name << " initialized: Feel free to mingle with, um... nobody.";
 	std::cout << " Uh -- there's, um, some pizza. If you're hungry." << std::endl;
 	return ;
@@ -51,7 +51,7 @@ ClapTrap::ClapTrap( ClapTrap & src ) {
 }
 
 ClapTrap::ClapTrap(  ) 
-	: _name( "ClapTrap" ), _hitPoints( 100 ), _energyPoints( 50 ), _attackDamage( 20 ) {
+	: _name( "ClapTrap" ), _hitPoints( 10 ), _energyPoints( 10 ), _attackDamage( 0 ) {
 	std::cout << "ClapTrap initialized: \"I am a CL4P-TP steward bot, but my";
 	std::cout << "friends call me Claptrap! Or they would, if any of them were";
 	std::cout << " still alive, or have existed in the first place!\"" << std::endl;

@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 11:10:35 by ftomazc          ###   ########.fr       */
+/*   Created: 2024/07/04 18:38:26 by ftomazc           #+#    #+#             */
+/*   Updated: 2024/07/05 12:09:52 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-class Fixed
-{
-	
-private:
-	int					_fixedPointNumber;
-	static const int	_numberFractionalBits = 8;
+# include "AMateria.hpp"
+
+class Ice : public AMateria {
 
 public:
-	Fixed( void );
-	Fixed( Fixed const & src );
-	~Fixed( void );
+	Ice(  );
+	Ice( const Ice & src );
+	~Ice(  );
 
-	Fixed &	operator=( Fixed const & rhs );
+	Ice &	operator=( const Ice & rhs );
 
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	AMateria *	clone(  ) const;
+	void		use( ICharacter& target );
+
 };
 
 #endif

@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 11:10:35 by ftomazc          ###   ########.fr       */
+/*   Created: 2024/07/02 13:09:41 by ftomazc           #+#    #+#             */
+/*   Updated: 2024/07/03 16:40:40 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-class Fixed
-{
-	
+#include <iostream>
+
+class Brain {
+
 private:
-	int					_fixedPointNumber;
-	static const int	_numberFractionalBits = 8;
+	std::string	_ideas[100];
 
 public:
-	Fixed( void );
-	Fixed( Fixed const & src );
-	~Fixed( void );
+	Brain(  );
+	Brain( const Brain & src );
+	~Brain(  );
+	Brain &	operator=( const Brain & rhs );
 
-	Fixed &	operator=( Fixed const & rhs );
-
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	void		setIdea ( int index, std::string idea );
+	std::string	getIdea ( int index ) const;
 };
 
 #endif

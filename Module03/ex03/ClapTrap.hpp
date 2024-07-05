@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:29 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/01 15:37:58 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/07/01 17:14:16 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ protected:
 public:
 	ClapTrap(  );
 	ClapTrap( std::string name );
-	ClapTrap( const ClapTrap & src );
+	ClapTrap( ClapTrap & src );
 	~ClapTrap(  );
 	ClapTrap &	operator=( const ClapTrap & rhs );
 

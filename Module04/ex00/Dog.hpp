@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 11:10:35 by ftomazc          ###   ########.fr       */
+/*   Created: 2024/07/02 10:36:52 by ftomazc           #+#    #+#             */
+/*   Updated: 2024/07/02 12:21:16 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-class Fixed
+# include "Animal.hpp"
+
+class Dog : public Animal
 {
-	
-private:
-	int					_fixedPointNumber;
-	static const int	_numberFractionalBits = 8;
 
 public:
-	Fixed( void );
-	Fixed( Fixed const & src );
-	~Fixed( void );
+	Dog(  );
+	Dog( Dog & src );
+	virtual ~Dog(  );
+	Dog &	operator=( const Dog & rhs );
 
-	Fixed &	operator=( Fixed const & rhs );
-
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	virtual void	makeSound(  ) const;
 };
 
 #endif
