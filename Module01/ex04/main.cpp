@@ -6,58 +6,63 @@
 /*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 15:17:52 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/28 15:19:54 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/09/09 18:00:26 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
 #include <fstream>
+#include <string>
 
 int	main(int argc, char **argv)
 {
-	if (argc != 4)
-	{
+	if (argc != 4) {
 		std::cerr << "This program takes 3 parameters:" << std::endl;
 		std::cerr << "Usage: " << argv[0] << " filename s1 s2" << std::endl;
 		return (1);
 	}
 
-	std::fstream	fs;
-	fs.open(argv[1]);
-	if (!fs)
-	{
-		std::cerr << "error: " << argv[1] << " could not open" << std::endl;
+	std::string	filename = argv[1];
+	std::string	s1 = argv[2];
+	std::string s2 = argv[3];
+	if (s1.empty()) {
+		std::cerr << "error: s1 cannot be empty string" << std::endl;
+		return (1);
+	}
+	
+	std::ifstream	infile(filename.c_str());
+	if (!infile) {
+		std::cerr << "error: " << argv[1] << " could not be opened" << std::endl;
 		return (2);
 	}
-	if (fs.peek() == EOF) {
+	if (infile.peek() == EOF) {
 		std::cout << "error: file is empty" << std::endl;
 		return (3);
 	}
 
-	std::ofstream	new_file("new_file.txt", std::ios_base::app);
-	if (!new_file)
-	{
-		std::cerr << "error: could not create new_file.txt" << std::endl;
-		fs.close();
+	std::string	outfileName = filename + ".replace";
+	std::ofstream	outfile(outfileName.c_str());
+	if (!outfile) {
+		std::cerr << "error: could not create output file" << std::endl;
+		infile.close();
 		return (4);
 	}
 
-	std::string	buf;
-	while(std::getline(fs, buf, '\n'))
+	std::string	line;
+	while(std::getline(infile, line))
 	{
-		size_t	pos = buf.find(argv[2]);
-		if (pos != std::string::npos)
+		size_t	pos = 0;
+		while ((pos = line.find(s1, pos)) != std::string::npos)
 		{
-			buf.erase(pos, std::string(argv[2]).length() - 1);
-			buf.insert(pos, std::string(argv[3]));
+			line.erase(pos, s1.length());
+			line.insert(pos, s2);
+			pos += s2.length(); 
 		}
-		new_file << buf;
-		buf.clear();
-		if (fs.peek() != EOF)
-			new_file << std::endl;
+		outfile << line;
+		if (!infile.eof())
+			outfile << std::endl;
 	}
-	fs.close();
-	new_file.close();
+	infile.close();
+	outfile.close();
 	return (0);
 }
