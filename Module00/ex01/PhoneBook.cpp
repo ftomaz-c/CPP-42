@@ -6,7 +6,7 @@
 /*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:43:24 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/24 18:06:13 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:41:15 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,19 @@ void	PhoneBook::searchContact() const
 		std::cout << std::endl;
 		std::cout << "Entry: ";
 		std::cin >> index;
-		if (std::cin.fail())
+		if (std::cin.eof())
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			index = -1;
+			return ;
 		}
-		if ((index >= 1 && index <= 8 && _contacts[index - 1].getIndex() == -1) || index == -1)
+		if (!isdigit(static_cast<char>(index) + 48))
 		{
 			std::cout << "--Invalid entry. Please enter a number between 1 and 8";
 			std::cout << " corresponding to an existing contact--" << std::endl;
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			index = 0;
 		}
 	} while (index < 1 || index > 8);
@@ -87,7 +90,8 @@ void	PhoneBook::addContact(void)
 	_currentContactIndex++;
 	if (_currentContactIndex == MAX_CONTACTS)
 		_currentContactIndex = 0;
-	std::cout << "--Contact added--\n";
+	if (!std::cin.eof())
+		std::cout << "--Contact added--\n";
 	return ;
 }
 

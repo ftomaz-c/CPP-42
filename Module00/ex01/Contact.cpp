@@ -6,7 +6,7 @@
 /*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:54:27 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/24 18:06:05 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/08/28 16:12:25 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ std::string getInput(const std::string &prompt)
 	std::string input;
 	do
 	{
-		std::cout << prompt;
+		if (!std::cin.eof())
+			std::cout << prompt;
 		std::getline(std::cin, input);
 		input = trim(input);
-		if (input.empty())
+		if (input.empty() && !std::cin.eof())
 			std::cout << "Input cannot be empty. Please enter a valid input." << std::endl;
-	} while (input.empty());
+	} while (input.empty() && !std::cin.eof());
 	return (input);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:45:46 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/24 17:53:52 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/08/28 15:54:56 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ int	main(int argc, char **argv)
 			phonebook.addContact();
 		else if (command.compare("SEARCH") == 0)
 			phonebook.searchContact();
+		else if (std::cin.eof())
+			return (0);
 		else if (command.compare("EXIT") != 0)
 			std::cout << "--Unknown command. Please try again--" << std::endl;
-	} while (command.compare("EXIT") != 0);
+	} while (command.compare("EXIT") != 0 && !std::cin.eof());
 	return (0);
 }
