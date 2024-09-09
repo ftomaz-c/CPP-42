@@ -1,0 +1,12 @@
+- class atributes;
+    -private;
+    -public;
+- stack allocation vs heap allocation
+    -stack uses a contiguos block of memory;
+    -stack is allocated automatically by the compiler everytime the function is called;
+    -stack is temporary memory;
+    -heap is allocated during the execution by the programmer
+    -heap is a pile of memory available to memory management
+- stack destruction vs heap destruction 
+    -stack is deallocated automatically at the end of a function
+    -heap has to be deallocated by the programmer unless leaks can happen

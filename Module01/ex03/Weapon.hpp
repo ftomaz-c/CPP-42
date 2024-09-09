@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:27:11 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/21 23:16:35 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/09 15:49:46 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ public:
 	Weapon(std::string type);
 	~Weapon();
 
-	std::string	getType() const;
-	void		setType(std::string type);
+	const std::string &	getType() const;
+	void				setType(std::string type);
 };
 
 #endif

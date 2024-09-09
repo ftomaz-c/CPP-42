@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:31:39 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/21 23:16:53 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/09 15:48:39 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-std::string	Weapon::getType() const
+const std::string &	Weapon::getType() const
 {
 	return(this->_type);
 }
