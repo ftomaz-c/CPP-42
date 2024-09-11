@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 21:53:16 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/29 17:50:38 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/11 14:31:02 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	Fixed( Fixed const & src );
 	~Fixed( void );
 
-	/*relational operators*/
+	/*comparison operators*/
 	bool	operator>( Fixed const & obj ) const;
 	bool	operator<( Fixed const & obj ) const;
 	bool	operator>=( Fixed const & rhs ) const;
@@ -37,13 +37,13 @@ public:
 	bool	operator==( Fixed const & rhs ) const;
 	bool	operator!=( Fixed const & rhs ) const;
 
-	/*arythmetic operators*/
+	/*arithmetic operators*/
 	Fixed	operator+( Fixed const & obj );
 	Fixed	operator-( Fixed const & obj );
 	Fixed	operator*( Fixed const & obj );
 	Fixed	operator/( Fixed const & obj );
 	
-	/*increment and decrement operators*/
+	/*increment/decrement operators*/
 	Fixed &	operator++( void ); //empty parameter: PREFIX
 	Fixed	operator++( int ); //dummy parameter int: POSTFIX
 	Fixed &	operator--( void );
@@ -51,10 +51,10 @@ public:
 
 	Fixed & operator=( const Fixed & rhs );
 
-	static Fixed	min ( Fixed & obj1, Fixed & obj2 );
-	static Fixed	min ( Fixed const & obj1, Fixed const & obj2 );
-	static Fixed	max ( Fixed & obj1, Fixed & obj2 );
-	static Fixed	max ( Fixed const & obj1, Fixed const & obj2 );
+	static Fixed &	min ( Fixed & obj1, Fixed & obj2 );
+	static const Fixed &	min ( Fixed const & obj1, Fixed const & obj2 );
+	static Fixed &	max ( Fixed & obj1, Fixed & obj2 );
+	static const Fixed &	max ( Fixed const & obj1, Fixed const & obj2 );
 
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );

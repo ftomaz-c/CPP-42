@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 21:55:20 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/30 13:55:11 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/11 14:59:19 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsp.hpp"
+#include "Point.hpp"
 
 /* In computer science, binary space partitioning (BSP) is a method for space
 * partitioning which recursively subdivides an Euclidean space into two convex

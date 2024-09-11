@@ -6,7 +6,7 @@
 /*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 21:55:20 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/27 16:10:01 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/09/11 13:25:19 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int main( void )
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
-return 0;
+	return (0);
 }

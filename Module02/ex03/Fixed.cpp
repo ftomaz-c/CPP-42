@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 21:58:21 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/29 17:52:22 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/11 14:33:10 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,25 +134,25 @@ Fixed	Fixed::operator--( int ) {
 	return ( tmp );
 }
 
-Fixed	Fixed::min ( Fixed & obj1, Fixed & obj2 ) {
+Fixed &	Fixed::min ( Fixed & obj1, Fixed & obj2 ) {
 	if ( obj2.getRawBits() < obj1.getRawBits() )
 		return ( obj2 );
 	return ( obj1 );
 }
 
-Fixed	Fixed::min ( Fixed const & obj1, Fixed const & obj2 ) {
+const Fixed &	Fixed::min ( Fixed const & obj1, Fixed const & obj2 ) {
 	if ( obj2.getRawBits() < obj1.getRawBits() )
 		return ( obj2 );
 	return ( obj1 );
 }
 
-Fixed	Fixed::max ( Fixed & obj1, Fixed & obj2 ) {
+Fixed &	Fixed::max ( Fixed & obj1, Fixed & obj2 ) {
 	if ( obj2.getRawBits() > obj1.getRawBits() )
 		return ( obj2 );
 	return ( obj1 );
 }
 
-Fixed	Fixed::max ( Fixed const & obj1, Fixed const & obj2 ) {
+const Fixed &	Fixed::max ( Fixed const & obj1, Fixed const & obj2 ) {
 	if ( obj2.getRawBits() > obj1.getRawBits() )
 		return ( obj2 );
 	return ( obj1 );

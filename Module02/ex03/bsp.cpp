@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 18:53:36 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/06/30 17:47:17 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/11 14:58:01 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsp.hpp"
+#include "Point.hpp"
 
 /*
  * Binary Space Partitioning (BSP)
@@ -62,18 +62,20 @@
  * calculates the signed area of the parallelogram formed by vectors AB and AP
  */
 
-bool bsp( Point const a, Point const b, Point const c, Point const point) {
+static const Fixed	cross_product( const Point & one, const Point & two, const Point & p)
+{
+	return ((two.getX() - one.getX()) * (p.getY() - one.getY()) - (p.getX() - one.getX()) * (two.getY() - one.getY()));
+}
+
+bool bsp( const Point & a, const Point & b, const Point & c, const Point & point) {
 	
 	Fixed	d1;
 	Fixed	d2;
 	Fixed	d3;
 	
-	//AB and AP
-	d1 = ((b.getX() - a.getX()) * (point.getY() - a.getY())) - ((point.getX() - a.getX()) * (b.getY() - a.getY()));
-	//BC and BP
-	d2 = ((c.getX() - b.getX()) * (point.getY() - b.getY())) - ((point.getX() - b.getX()) * (c.getY() - b.getY()));
-	//CA and CP
-	d3 = ((a.getX() - c.getX()) * (point.getY() - c.getY())) - ((point.getX() - c.getX()) * (a.getY() - c.getY()));
+	d1 = cross_product(a, b, point);
+	d2 = cross_product(b, c, point);
+	d3 = cross_product(c, a, point);
 
 	bool has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
 	bool has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
