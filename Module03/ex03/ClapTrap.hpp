@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:29 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/01 17:14:16 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/06/30 18:41:14 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap {
 	
-protected:
+private:
 	std::string	_name;
 	int			_hitPoints;
 	int			_energyPoints;
