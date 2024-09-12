@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 18:04:00 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/09/12 00:00:27 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/12 12:04:33 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,47 +17,48 @@
 #include "ScavTrap.hpp"
 
 int main() {
-	ClapTrap claptrap1("CL4P-TP");
-	ScavTrap scavtrap1("SC4V-TP");
+	{
+		std::cout << "\n\t\t--- Initialization Tests ---\n" << std::endl;
+		ClapTrap claptrap1("CL4P-TP");
+		ScavTrap scavtrap1("SC4V-TP");
 
-	std::cout << "\n--- Basic Functionality Tests ---\n" << std::endl;
+		std::cout << "\n\t\t--- Basic Functionality Tests ---\n" << std::endl;
 
-	std::cout << "CL4P-TP attacks a Bandit!" << std::endl;
-	claptrap1.attack("Bandit");
-	claptrap1.takeDamage(3);
-	claptrap1.beRepaired(5);
+		std::cout << "\t\t<<CL4P-TP attacks a Bandit!>>" << std::endl;
+		claptrap1.attack("Bandit");
+		claptrap1.takeDamage(3);
+		claptrap1.beRepaired(5);
+		std::cout << std::endl;
+		std::cout << "\t\t<<SC4V-TP faces a Thresher!>>" << std::endl;
+		scavtrap1.attack("Thresher");
+		scavtrap1.takeDamage(8);
+		scavtrap1.beRepaired(10);
 
-	std::cout << "SC4V-TP faces a Thresher!" << std::endl;
-	scavtrap1.attack("Thresher");
-	scavtrap1.takeDamage(8);
-	scavtrap1.beRepaired(10);
+		std::cout << "\n\t\t --- Energy Depletion Test ---\n" << std::endl;
+		for (int i = 1; i < 51; ++i) {
+			std::cout << i << ": ";
+			scavtrap1.attack("Bandit");
+		}
+		scavtrap1.beRepaired(10);
+		scavtrap1.attack("Thresher");
 
-	std::cout << "--- Energy Depletion Test ---" << std::endl;
-	for (int i = 0; i < 51; ++i) {
-		scavtrap1.attack("Energy Drain Test Dummy");
+		std::cout << "\n\t\t --- Heal Mode Test ---\n" << std::endl;
+		scavtrap1.takeDamage(100);
+		scavtrap1.attack("Thresher");
+		scavtrap1.beRepaired(10);
+		scavtrap1.guardGate();
+		scavtrap1.takeDamage(20);
+
+		std::cout << "\n\t\t--- Guard Mode Test ---\n" << std::endl;
+		ScavTrap scavtrap2("Gatekeeper");
+		scavtrap2.guardGate();
+		scavtrap2.takeDamage(90);
+		scavtrap2.guardGate();
+		scavtrap2.takeDamage(15);
+		scavtrap2.guardGate();
+		std::cout << std::endl;
 	}
-	std::cout << "SC4V-TP is out of energy and can't attack or repair.\n" << std::endl;
-	scavtrap1.beRepaired(10);
-	scavtrap1.attack("Thresher");
-	std::cout << "SC4V-TP fails to repair or attack without energy.\n" << std::endl;
-
-	std::cout << "--- Health Depletion Test ---" << std::endl;
-	scavtrap1.takeDamage(100);
-	scavtrap1.attack("Thresher");
-	scavtrap1.beRepaired(10);
-	scavtrap1.guardGate();
-	std::cout << "SC4V-TP is down! No actions possible with zero health.\n" << std::endl;
-
-	std::cout << "--- Guard Mode Test ---" << std::endl;
-	ScavTrap scavtrap2("Gatekeeper");
-	scavtrap2.guardGate();
-	scavtrap2.takeDamage(90);
-	scavtrap2.guardGate();
-	scavtrap2.takeDamage(15);
-	scavtrap2.guardGate();
-	std::cout << "Gatekeeper is also down. Guard mode is disabled with zero health.\n" << std::endl;
-
-	std::cout << "--- All Tests Complete ---" << std::endl;
+	std::cout << "\n\t\t--- All Tests Complete ---" << std::endl;
 
 	return 0;
 }

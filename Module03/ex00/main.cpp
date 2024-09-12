@@ -3,50 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 18:04:00 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/09/11 23:42:18 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/12 12:03:43 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int	main ( void ) {
-	ClapTrap defaultClaptrap;
-	ClapTrap clonedClaptrap( defaultClaptrap );
-	ClapTrap heroClaptrap( "C-3PO" );
-	ClapTrap healerClaptrap( "Baymax" );
 
-	std::cout << "\n--- The adventure begins! ---\n" << std::endl;
+	std::cout << "\n\t\t--- Basic Functionality Tests ---\n" << std::endl;
+	{
+		ClapTrap defaultClaptrap;
+		std::cout << "\t\t<<ClapTrap attacks a Bandit>>" << std::endl;
+		defaultClaptrap.attack( "Bandit" );
+		defaultClaptrap.takeDamage( 3 );
+		defaultClaptrap.beRepaired( 2 );
+		std::cout << std::endl;
 
-	std::cout << "Default ClapTrap encounters a Bandit!" << std::endl;
-	defaultClaptrap.attack( "Bandit" );
-	defaultClaptrap.takeDamage( 3 );
-	defaultClaptrap.beRepaired( 2 );
-	std::cout << std::endl;
-
-	std::cout << "Cloned ClapTrap tries its luck against a Skag!" << std::endl;
-	clonedClaptrap.attack( "Skag" );
-	clonedClaptrap.takeDamage( 5 );
-	clonedClaptrap.beRepaired( 0 );
-	std::cout << std::endl;
-
-	std::cout << "Hero ClapTrap 'C-3PO' nervously faces a Thresher!" << std::endl;
-	heroClaptrap.attack( "Thresher" );
-	heroClaptrap.takeDamage( 0 );
-	heroClaptrap.beRepaired( 6 );
-	std::cout << std::endl;
-
-	std::cout << "Healer ClapTrap 'Baymax' battles a Vault Guardian!" << std::endl;
-	healerClaptrap.attack( "Vault Guardian" );
-	healerClaptrap.takeDamage( 10 );
-	std::cout << "Baymax is not done yet! Repairing..." << std::endl;
-	healerClaptrap.beRepaired( 10 );
-	std::cout << "Baymax launches a counter-attack!" << std::endl;
-	healerClaptrap.attack( "Vault Guardian" );
-	std::cout << std::endl;
-
-	std::cout << "--- The adventure ends! ---" << std::endl;
+		ClapTrap clonedClaptrap( defaultClaptrap );
+		std::cout << "\t\t<<Cloned ClapTrap attacks Skag with 0 Repaired>>" << std::endl;
+		clonedClaptrap.attack( "Skag" );
+		clonedClaptrap.takeDamage( 5 );
+		clonedClaptrap.beRepaired( 0 );
+	}
+	{
+		ClapTrap hero1Claptrap( "Baymax" );
+		std::cout << "\t\t<<Baymax attacks Thresher and takes 0 damage>>" << std::endl;
+		hero1Claptrap.attack( "Thresher" );
+		hero1Claptrap.takeDamage( 0 );
+		hero1Claptrap.beRepaired( 6 );
+	}
+	{
+		std::cout << "\n\t\t --- Energy Depletion Test ---\n" << std::endl;
+		ClapTrap	hero2ClapTrap( "Optimus Prime" );
+		hero2ClapTrap.beRepaired( 1 );
+		hero2ClapTrap.beRepaired( 1 );
+		hero2ClapTrap.beRepaired( 1 );
+		for (int i = 1; i < 11; i++) {
+			std::cout << i << ": ";
+			hero2ClapTrap.attack( "Thresher" );
+		}
+	}
+	std::cout << "**********" << std::endl;
+	{
+		std::cout << "\n\t\t --- Heal Mode Test ---\n" << std::endl;
+		ClapTrap healerClaptrap( "C-3PO" );
+		healerClaptrap.attack( "Vault Guardian" );
+		healerClaptrap.takeDamage( 10 );
+		healerClaptrap.beRepaired( 10 );
+		healerClaptrap.attack( "Vault Guardian" );
+	}
+	std::cout << "\n\t\t--- All Tests Completed ---" << std::endl;
 	return ( 0 );
 }
