@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 14:57:20 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/01 18:20:32 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/07/01 18:00:34 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap {
+class ScavTrap : public ClapTrap {
 
 public:
 	ScavTrap(  );
 	ScavTrap( std::string name );
-	ScavTrap( ScavTrap & src );
+	ScavTrap( const ScavTrap & src );
 	ScavTrap & operator=( const ScavTrap & rhs );
 	~ScavTrap(  );
 

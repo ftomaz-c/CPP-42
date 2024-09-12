@@ -6,7 +6,7 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:09:23 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/01 18:20:39 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/07/01 18:14:41 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : virtual public ClapTrap
+class FragTrap : public ClapTrap
 {
 public:
 	FragTrap( void );

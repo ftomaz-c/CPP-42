@@ -6,30 +6,32 @@
 /*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:09:25 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/01 18:15:13 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/12 00:10:14 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 void	FragTrap::highFivesGuys ( void ) {
-	std::cout << "FragTrap " << _name << " high fives everyone!" << std::endl;
-	return ;
+	if ( _hitPoints > 0 && _energyPoints > 0 ) {
+		std::cout << "FragTrap " << _name << " enthusiastically shouts: \n" << std::endl;
+		std::cout << "\t - High fives, everyone! Don't leave me hanging! -\n" << std::endl;
+	} else {
+		std::cout << "FragTrap " << _name << " attempts to raise a hand but... sadly waves his broken arm. 'No high fives... today...'" << std::endl;
+	}
 }
 
 
-void	FragTrap::attack( const std::string & target ) {
+void FragTrap::attack( const std::string & target ) {
 	if ( _energyPoints > 0 ) {
-		std::cout << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+		std::cout << _name << " wildly attacks " << target << ", dealing " << _attackDamage << " points of damage! Boom, baby!" << std::endl;
 		_energyPoints--;
-	} else {
-		std::cout << "ScavTrap " << _name << " is out of energy and cannot attack!" << std::endl;
-	}
+	} else
+		std::cout << _name << " tries to attack " << target << " but runs out of energy mid-swing... 'I'm too tired for this!'" << std::endl;
 }
 
 FragTrap::FragTrap( std::string name ) : ClapTrap( name ) {
 	std::cout << "A Fragmented Fragtrap " << name << " appeared!" << std::endl;
-	_name = name;
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
@@ -62,6 +64,6 @@ FragTrap::FragTrap( ) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << "FragTrap will return!" << std::endl;
-	return ;
+	std::cout << _name << " dramatically yells: \n" << std::endl;
+	std::cout << "\t - I'll be back! FragTrap never truly dies! -\n" << std::endl;	return ;
 }

@@ -3,39 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:26 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/09/11 20:05:14 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/09/11 23:45:24 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-void	ClapTrap::beRepaired( unsigned int amount ) {
-	if ( _energyPoints && _hitPoints ) {
-		std::cout << _name << " repaired by " << amount << "!" << std::endl;
-		_hitPoints += amount;
-	}
+void ClapTrap::beRepaired( unsigned int amount ) {
+	if ( _energyPoints > 0 && _hitPoints > 0 ) {
+		if ( amount == 0 )
+			std::cout << _name << " tried to repair itself but... nothing happened! Great job, Claptrap!" << std::endl;
+		else {
+			std::cout << _name << " repaired by " << amount << "!" << std::endl;
+			_hitPoints += amount;
+		}
+	} else
+		std::cout << _name << " failed to repair itself... maybe try duct tape next time!" << std::endl;
 }
 
-void	ClapTrap::takeDamage( unsigned int amount ) {
-	std::cout << _name << " took " << amount << " of damage!" << std::endl;
+void ClapTrap::takeDamage( unsigned int amount ) {
+	std::cout << _name << " just took " << amount << " points of damage! Ouch, that hurt!" << std::endl;
 	if ( _hitPoints > (int)amount ) {
 		_hitPoints -= amount;
+		std::cout << _name << " is still standing! Barely..." << std::endl;
 	} else {
 		_hitPoints = 0;
-		std::cout << _name << " is down!" << std::endl;
+		std::cout << _name << " is down! Somebody call a repair bot!" << std::endl;
 	}
-	return ;
+	return;
 }
 
 void	ClapTrap::attack( const std::string & target ) {
-	if ( _hitPoints && _energyPoints ) {
-		std::cout << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage! Actually it was more like a tickle! ClapTrap is so funny!" << std::endl;
+	if ( _hitPoints > 0 && _energyPoints > 0 ) {
+		std::cout << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage! Actually it was more like a tickle! " << _name << " is so funny!" << std::endl;
 		_energyPoints--;
 	} else {
-		std::cout << "ClapTrap " << _name << " is out of energy and cannot attack! Or tickle! Or whatever ClapTraps do..." << std::endl;
+		std::cout << "ClapTrap " << _name << " is too tired to attack! Maybe after a quick recharge nap?" << std::endl;
 	}
 	
 }

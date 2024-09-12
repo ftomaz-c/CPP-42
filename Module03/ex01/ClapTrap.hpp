@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:29 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/09/11 20:15:55 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/09/11 23:43:40 by ftomazc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ public:
 	ClapTrap(  );
 	ClapTrap( std::string name );
 	ClapTrap( const ClapTrap & src );
-	ClapTrap &	operator=( const ClapTrap & rhs );
 	~ClapTrap(  );
+	ClapTrap &	operator=( const ClapTrap & rhs );
 
 	void	attack( const std::string& target );
 	void	takeDamage( unsigned int amount );
