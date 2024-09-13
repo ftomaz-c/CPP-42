@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:46:09 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/04 16:30:58 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 16:51:40 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,26 @@ void	Cat::makeSound(  ) const {
 
 Cat &	Cat::operator=( const Cat & rhs ) {
 	if ( this != &rhs ) {
-		type = rhs.type;
-		_brain = new Brain(*rhs._brain);
+		AAnimal::operator=(rhs);
+		Brain *newBrain = new Brain( *rhs._brain );
+		delete _brain;
+		_brain = newBrain;
 	}
 	return (*this);
 }
 
-Cat::Cat ( const Cat & src ) : AAnimal( src ) {
+Cat::Cat ( const Cat & src ) : AAnimal( src ), _brain(new Brain(*src._brain)) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = src;
-	return ;
 }
 
-Cat::Cat(  ) {
+Cat::Cat(  ) : AAnimal(  ), _brain(new Brain()) {
 	std::cout << "Cat default constructor called" << std::endl;
 	type = "Cat";
-	_brain = new Brain();
-	return ;
 }
 
 Cat::~Cat(  ) {
 	std::cout << "Cat destructor called" << std::endl;
 	delete _brain;
-	return ;
 }
 
 Brain	*Cat::getBrain (  ) const {

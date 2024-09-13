@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:46:28 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/04 16:30:54 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 16:45:22 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
 class Cat : public AAnimal {

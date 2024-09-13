@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:23:41 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 12:29:15 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 12:24:03 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 
 public:
 	WrongAnimal(  );
-	WrongAnimal( WrongAnimal & src );
+	WrongAnimal( const WrongAnimal & src );
 	~WrongAnimal(  );
 	WrongAnimal &	operator=( const WrongAnimal & rhs );
 

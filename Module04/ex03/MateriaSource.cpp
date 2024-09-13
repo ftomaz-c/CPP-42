@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 12:51:15 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/05 14:56:33 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 17:43:22 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,47 +15,55 @@
 #include "Cure.hpp"
 
 MateriaSource::MateriaSource(  ) {
+
+	std::cout << "MateriaSource Default Constructor called" << std::endl;
 	for ( int i = 0; i < 4; i++ ) {
 		_materias[i] = NULL;
 	}
-	return ;
 }
 
 MateriaSource::MateriaSource( const MateriaSource & src ) {
+
+	std::cout << "MateriaSource Copy Constructor called" << std::endl;
 	*this = src;
-	return ;
 }
 
 MateriaSource::~MateriaSource(  ) {
-	for ( int i = 0; i < 4; i++ ) {
+
+	std::cout << "MateriaSource Destructor called" << std::endl;
+	for ( int i = 0; i < 4; i++ )
 		delete _materias[i];
-	}
-	return ;
 }
 
 MateriaSource &	MateriaSource::operator=( const MateriaSource & rhs ) {
+		
 	if ( this != &rhs ) {
 		for ( int i = 0; i < 4; i++ ) {
-			_materias[i] = rhs._materias[i];
+			if ( _materias[i] )
+			{
+				delete _materias[i];
+				_materias[i] = NULL;
+			}
+		}
+		for ( int i = 0; i < 4; i++ ) {
+			if ( rhs._materias[i] )
+				_materias[i] = rhs._materias[i]->clone();
+			else
+				_materias[i] = NULL;
 		}
 	}
 	return ( *this );
 }
 
 void	MateriaSource::learnMateria( AMateria *m ) {
-	
-	bool	learned = false;
+
 	for ( int i = 0; i < 4; i++ ) {
 		if ( !_materias[i] ) {
 			_materias[i] = m;
-			learned = true;
-			break ;
+			return ;
 		}
 	}
-	if (!learned) {
-		std::cout << "Materia not learned" << std::endl;
-	}
-	return ;
+	std::cout << "Materia not learned" << std::endl;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type) {

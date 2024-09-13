@@ -6,7 +6,7 @@
 /*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:56:08 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/09/13 11:57:20 by ftomaz-c         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:32:21 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	main( void ) {
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
 	meta->makeSound();
+	j->makeSound();
+	i->makeSound(); //will output the cat sound!
 
 	delete	meta;
-	delete	i;
 	delete	j;
+	delete	i;
 	
 	std::cout << "\n\t-----------\n" << std::endl; 
 	

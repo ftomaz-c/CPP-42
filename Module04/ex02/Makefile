@@ -1,10 +1,10 @@
-CC = g++
+CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
 NAME = Brain
 
-SRCS =	Animal.cpp \
+SRCS =	AAnimal.cpp \
 		Dog.cpp \
 		Cat.cpp \
 		WrongAnimal.cpp \

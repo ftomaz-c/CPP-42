@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:24:25 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/03 16:44:36 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 13:34:27 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	Animal::makeSound(  ) const {
 	std::cout << "???" << std::endl;
-	return ;
 }
 
 std::string	Animal::getType(  ) const {
@@ -28,18 +27,14 @@ Animal &	Animal::operator=( const Animal & rhs ) {
 	return ( *this );
 }
 
-Animal::Animal( const Animal & src ) {
+Animal::Animal( const Animal & src ) : type( src.type ){
 	std::cout << "Animal copy constructor called" << std::endl;
-	*this = src;
-	return ;
 }
 
 Animal::Animal(  ) : type( "" ) {
 	std::cout << "Default Animal constructor called" << std::endl;
-	return ;
 }
 
 Animal::~Animal(  ) {
 	std::cout << "Animal destructor called" << std::endl;
-	return ;
 }

@@ -3,28 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:40:26 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/05 12:11:19 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 18:00:40 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(  ) {
+Ice::Ice(  )  : AMateria( "ice" ) {
 	std::cout << "Ice Default constructor called" << std::endl;
-	_type = "ice";
-	return ;
 }
 
 Ice::Ice( const Ice & src ) : AMateria( src ) {
-	*this = src;
+	std::cout << "Ice Copy constructor called" << std::endl;
 	return ;
 }
 
 Ice &	Ice::operator=( const Ice & rhs ) {
 	if ( this != &rhs ) {
+		AMateria::operator=(rhs);
 		_type = rhs._type;
 	}
 	return ( *this );
@@ -42,5 +41,6 @@ void	Ice::use( ICharacter& target ) {
 }
 
 AMateria *	Ice::clone(  ) const {
+
 	return (new Ice(*this));
 }

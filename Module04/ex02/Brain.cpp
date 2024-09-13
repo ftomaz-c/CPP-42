@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 13:09:32 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/03 16:45:02 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 16:01:24 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,14 @@ Brain &	Brain::operator=( const Brain & rhs) {
 
 Brain::Brain ( const Brain & src ) {
 	*this = src;
-	return ;
 }
 
 Brain::Brain(  ) {
 	std::cout << "Brain default constructor called" << std::endl;
-	return ;
 }
 
 Brain::~Brain(  ) {
 	std::cout << "Brain destructor called" << std::endl;
-	return ;
 }
 
 void	Brain::setIdea( int index, std::string idea ) {
@@ -43,7 +40,6 @@ void	Brain::setIdea( int index, std::string idea ) {
 	}
 	else
 		std::cerr << "There are only 100 ideas available!" << std::endl;
-	return ;
 }
 
 std::string	Brain::getIdea( int index ) const {

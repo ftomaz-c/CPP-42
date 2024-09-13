@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:36:52 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/04 16:41:40 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 16:45:27 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
 class Dog : public AAnimal {
