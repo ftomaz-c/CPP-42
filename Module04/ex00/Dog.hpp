@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:36:52 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 12:21:16 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 12:19:49 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Dog : public Animal
 
 public:
 	Dog(  );
-	Dog( Dog & src );
+	Dog( const Dog & src );
 	virtual ~Dog(  );
 	Dog &	operator=( const Dog & rhs );
 
-	virtual void	makeSound(  ) const;
+	void	makeSound(  ) const;
 };
 
 #endif

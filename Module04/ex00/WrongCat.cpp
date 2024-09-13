@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:24:02 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 12:34:34 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 12:25:05 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,20 @@ void	WrongCat::makeSound(  ) const {
 
 WrongCat &	WrongCat::operator=( const WrongCat & rhs ) {
 	if ( this != &rhs ) {
-		type = rhs.type;
+		WrongAnimal::operator=(rhs);
 	}
 	return (*this);
 }
 
-WrongCat::WrongCat ( WrongCat & src ) : WrongAnimal( src ) {
-	std::cout << "Cat copy constructor called" << std::endl;
-	*this = src;
-	return ;
+WrongCat::WrongCat ( const WrongCat & src ) : WrongAnimal( src ) {
+	std::cout << "Wrong cat copy constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(  ) {
-	std::cout << "Cat default constructor called" << std::endl;
+WrongCat::WrongCat(  ) : WrongAnimal(  ) {
+	std::cout << "Wrong cat default constructor called" << std::endl;
 	type = "WrongCat";
-	return ;
 }
 
 WrongCat::~WrongCat(  ) {
-	std::cout << "Cat destructor called" << std::endl;
-	return ;
+	std::cout << "Wrong cat destructor called" << std::endl;
 }

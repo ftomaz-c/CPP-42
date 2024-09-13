@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:24:04 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 12:29:24 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 12:25:02 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class WrongCat : public WrongAnimal
 
 public:
 	WrongCat(  );
-	WrongCat( WrongCat & src );
+	WrongCat( const WrongCat & src );
 	~WrongCat(  );
 	WrongCat & operator=( const WrongCat & rhs );
 
-	void	makeSound(  ) const ;
+	void	makeSound(  ) const;
 };
 
 #endif

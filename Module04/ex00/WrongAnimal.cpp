@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:22:59 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 12:28:46 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 12:27:21 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	WrongAnimal::makeSound(  ) const {
 	std::cout << "???" << std::endl;
-	return ;
 }
 
 std::string	WrongAnimal::getType(  ) const {
@@ -23,23 +22,19 @@ std::string	WrongAnimal::getType(  ) const {
 
 WrongAnimal &	WrongAnimal::operator=( const WrongAnimal & rhs ) {
 	if ( this != &rhs ) {
-		
+		this->type = rhs.type;
 	}
 	return ( *this );
 }
 
-WrongAnimal::WrongAnimal( WrongAnimal & src ) {
-	std::cout << "Animal copy constructor called" << std::endl;
-	*this = src;
-	return ;
+WrongAnimal::WrongAnimal( const WrongAnimal & src ) : type(src.type) {
+	std::cout << "Wrong animal copy constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(  ) : type( "" ) {
-	std::cout << "Default Animal constructor called" << std::endl;
-	return ;
+	std::cout << "Default Wrong Animal constructor called" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal(  ) {
-	std::cout << "Animal destructor called" << std::endl;
-	return ;
+	std::cout << "Wrong Animal destructor called" << std::endl;
 }

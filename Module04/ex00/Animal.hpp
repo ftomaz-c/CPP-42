@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:24:27 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 12:14:18 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 12:15:12 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 
 public:
 	Animal(  );
-	Animal( Animal & src );
+	Animal( const Animal & src );
 	virtual ~Animal(  );
 	Animal &	operator=( const Animal & rhs );
 

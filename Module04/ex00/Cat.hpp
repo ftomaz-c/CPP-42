@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:46:28 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 12:16:54 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 12:17:46 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Cat : public Animal
 
 public:
 	Cat(  );
-	Cat( Cat & src );
+	Cat( const Cat & src );
 	virtual ~Cat(  );
 	Cat & operator=( const Cat & rhs );
 
-	virtual void	makeSound(  ) const ;
+	void	makeSound(  ) const ;
 };
 
 #endif

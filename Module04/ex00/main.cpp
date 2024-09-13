@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:56:08 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 13:07:49 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 11:57:20 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,21 @@
 int	main( void ) {
 
 	const Animal* meta = new Animal();
-	const Animal* i = new Cat();
 	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-
+	
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+
 	delete	meta;
 	delete	i;
 	delete	j;
 	
-	std::cout << std::endl; 
+	std::cout << "\n\t-----------\n" << std::endl; 
 	
 	const WrongAnimal* k = new WrongAnimal();
 	const WrongAnimal* l1 = new WrongCat();

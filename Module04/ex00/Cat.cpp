@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftomazc < ftomaz-c@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ftomaz-c <ftomaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:46:09 by ftomazc           #+#    #+#             */
-/*   Updated: 2024/07/02 12:34:29 by ftomazc          ###   ########.fr       */
+/*   Updated: 2024/09/13 12:19:28 by ftomaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,20 @@ void	Cat::makeSound(  ) const {
 
 Cat &	Cat::operator=( const Cat & rhs ) {
 	if ( this != &rhs ) {
-		type = rhs.type;
+		Animal::operator= (rhs);
 	}
 	return (*this);
 }
 
-Cat::Cat ( Cat & src ) : Animal( src ) {
+Cat::Cat ( const Cat & src ) : Animal( src ) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = src;
-	return ;
 }
 
-Cat::Cat(  ) {
+Cat::Cat(  ) : Animal(  ) {
 	std::cout << "Cat default constructor called" << std::endl;
 	type = "Cat";
-	return ;
 }
 
 Cat::~Cat(  ) {
 	std::cout << "Cat destructor called" << std::endl;
-	return ;
 }
